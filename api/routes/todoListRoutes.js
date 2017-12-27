@@ -14,6 +14,6 @@ module.exports = function(app) {
   //   .delete(todoList.delete_a_task);
 
   app.route('/users')
-    .get(todoList.list_all_tasks)
-    .post(todoList.create_a_task);
+    .get(todoList.list_all_users)
+    .post(todoList.create_a_user);
 };

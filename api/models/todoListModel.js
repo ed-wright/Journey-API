@@ -2,41 +2,55 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-var TaskSchema = new Schema({
-  name: {
-    type: String,
-    required: 'Kindly enter the name of the task'
-  },
-  Created_date: {
-    type: Date,
-    default: Date.now
-  },
-  status: {
-    type: [{
-      type: String,
-      enum: ['pending', 'ongoing', 'completed']
-    }],
-    default: ['pending']
-  }
-});
-
 var UsersSchema = new Schema({
   email: {
     type: String,
-    required: 'Kindly enter the name of the task'
+    required: 'You are missing the email'
   },
-  Created_date: {
+  first_name: {
+    type: String,
+    required: 'You are missing the first name'
+  },
+  last_name: {
+    type: String,
+    required: 'You are missing the last name'
+  },
+  password: {
+    type: String,
+    required: 'You are missing the password'
+  },
+  postcode: {
+    type: String,
+    required: 'You are missing the password'
+  },
+  phone_no: {
+    type: String,
+    required: 'You are missing the password'
+  },
+  created_date: {
     type: Date,
     default: Date.now
   },
-  status: {
+  last_login: {
+    type: Date,
+    default: Date.now
+  },
+  account_status: {
     type: [{
       type: String,
-      enum: ['pending', 'ongoing', 'completed']
+      enum: ['pending', 'activated', 'deactivated']
     }],
     default: ['pending']
+  },
+  account_rank: {
+    type: [{
+      type: String,
+      enum: ['standard', 'admin']
+    }],
+    default: ['standard']
   }
 });
 
-module.exports = mongoose.model('Tasks', TaskSchema);
+
+module.exports = mongoose.model('Users', UsersSchema);
+//module.exports = mongoose.model('Tasks', TaskSchema);
