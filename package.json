@@ -1,0 +1,27 @@
+{
+  "name": "journey-backend",
+  "version": "0.0.1",
+  "description": "Backend API for the Journey App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "REST",
+    "RESTful",
+    "API",
+    "NODE",
+    "NodeJS",
+    "MongoDB"
+  ],
+  "author": "Edward Wright",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
+  }
+}
