@@ -56,11 +56,15 @@ module.exports = mongoose.model('Users', UsersSchema);
 var LoggingSchema = new Schema({
   api_call: {
     type: String,
-    required: 'You are missing the call'
+    default: 'Test'
+    //required: 'You are missing the call'
   },
   created_date: {
     type: Date,
     default: Date.now
+  },
+  ip: {
+    type: String
   }
 });
 

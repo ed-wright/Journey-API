@@ -1,7 +1,7 @@
 'use strict';
 var mongoose = require('mongoose'),
   //Task = mongoose.model('Tasks');
-  User = mongoose.model('Users');
+  User = mongoose.model('Users'),
   Log = mongoose.model('Logs');
 
 exports.list_all_tasks = function(req, res) {
@@ -32,8 +32,10 @@ exports.create_a_user = function(req, res) {
 };
 
 exports.list_all_users = function(req, res) {
-  var new_log = new Log();
-  new_log.save();
+  $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+    var new_log = new Log({"api_call": "list_all_users", "ip": data.ip});
+    new_log.save();
+  });
   User.find({}, function(err, task) {
     if (err)
       res.send(err);
