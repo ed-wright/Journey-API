@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ed-wright/Journey-API"
+  },
   "keywords": [
     "REST",
     "RESTful",
@@ -26,5 +30,9 @@
   },
   "engines": {
     "node": "8.9.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ed-wright/Journey-API/issues"
+  },
+  "homepage": "https://github.com/ed-wright/Journey-API#readme"
 }

@@ -21,11 +21,11 @@ var UsersSchema = new Schema({
   },
   postcode: {
     type: String,
-    required: 'You are missing the password'
+    required: 'You are missing the postcode'
   },
   phone_no: {
     type: String,
-    required: 'You are missing the password'
+    required: 'You are missing the phone_no'
   },
   created_date: {
     type: Date,
