@@ -2,6 +2,7 @@
 var mongoose = require('mongoose'),
   //Task = mongoose.model('Tasks');
   User = mongoose.model('Users');
+  Log = mongoose.model('Logs');
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
@@ -31,6 +32,8 @@ exports.create_a_user = function(req, res) {
 };
 
 exports.list_all_users = function(req, res) {
+  var new_log = new Log();
+  new_log.save();
   User.find({}, function(err, task) {
     if (err)
       res.send(err);

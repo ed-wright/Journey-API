@@ -3,8 +3,8 @@
 ```Javascript
 Logs
 {
-  "api_call": "create_a_user",
-  "browser_properties": {
+  api_call: 'create_a_user',
+  browser_properties: [{
     "ip":"92.237.104.79",
     "country_code":"GB",
     "country_name":"United Kingdom",
@@ -16,6 +16,6 @@ Logs
     "latitude":52.6,
     "longitude":-2,
     "metro_code":0
-  }
+  }]
 }
 ```
