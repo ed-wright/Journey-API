@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../controllers/todoListController');
+  var journeyBackend = require('../controllers/controller');
 
   // // todoList Routes
   // app.route('/tasks')
@@ -14,6 +14,6 @@ module.exports = function(app) {
   //   .delete(todoList.delete_a_task);
 
   app.route('/users')
-    .get(todoList.list_all_users)
-    .post(todoList.create_a_user);
+    .get(journeyBackend.list_all_users)
+    .post(journeyBackend.create_a_user);
 };

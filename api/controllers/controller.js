@@ -1,7 +1,8 @@
 'use strict';
 var mongoose = require('mongoose'),
   //Task = mongoose.model('Tasks');
-  User = mongoose.model('Users');
+  User = mongoose.model('Users'),
+  Log = mongoose.model('Logs');
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
@@ -12,7 +13,7 @@ exports.list_all_tasks = function(req, res) {
 };
 
 exports.create_a_task = function(req, res) {
-  var new_task = new Task(req.body);
+  var new_task = new User(req.body);
   new_task.save(function(err, task) {
     if (err)
       res.send(err);
@@ -31,6 +32,10 @@ exports.create_a_user = function(req, res) {
 };
 
 exports.list_all_users = function(req, res) {
+  $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+    var new_log = new Log({"api_call": "list_all_users", "ip": data.ip});
+    new_log.save();
+  });
   User.find({}, function(err, task) {
     if (err)
       res.send(err);
@@ -55,8 +60,6 @@ exports.update_a_task = function(req, res) {
 };
 
 exports.delete_a_task = function(req, res) {
-
-
   Task.remove({
     _id: req.params.taskId
   }, function(err, task) {

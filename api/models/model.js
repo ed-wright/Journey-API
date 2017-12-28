@@ -51,6 +51,21 @@ var UsersSchema = new Schema({
   }
 });
 
-
 module.exports = mongoose.model('Users', UsersSchema);
-//module.exports = mongoose.model('Tasks', TaskSchema);
+
+var LoggingSchema = new Schema({
+  api_call: {
+    type: String,
+    default: 'Test'
+    //required: 'You are missing the call'
+  },
+  created_date: {
+    type: Date,
+    default: Date.now
+  },
+  ip: {
+    type: String
+  }
+});
+
+module.exports = mongoose.model('Logs', LoggingSchema);

@@ -4,7 +4,7 @@
   "description": "Backend API for the Journey App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/mocha/bin/mocha testing/test.js",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -22,10 +22,12 @@
   "author": "Edward Wright",
   "license": "ISC",
   "devDependencies": {
+    "mocha": "^4.0.1",
     "nodemon": "^1.14.3"
   },
   "dependencies": {
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "mongoose": "^4.13.7"
   },
   "engines": {
