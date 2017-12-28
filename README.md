@@ -1,7 +1,6 @@
 # Journey-API
-
+[![Build Status](https://travis-ci.org/ed-wright/Journey-API.svg?branch=master)](https://travis-ci.org/ed-wright/Journey-API)
 ```json
-Logs
 {
   "api_call": "create_a_user",
   "browser_properties": [{
