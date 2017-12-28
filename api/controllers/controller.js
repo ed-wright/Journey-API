@@ -12,7 +12,7 @@ exports.list_all_tasks = function(req, res) {
 };
 
 exports.create_a_task = function(req, res) {
-  var new_task = new Task(req.body);
+  var new_task = new User(req.body);
   new_task.save(function(err, task) {
     if (err)
       res.send(err);
@@ -55,8 +55,6 @@ exports.update_a_task = function(req, res) {
 };
 
 exports.delete_a_task = function(req, res) {
-
-
   Task.remove({
     _id: req.params.taskId
   }, function(err, task) {
