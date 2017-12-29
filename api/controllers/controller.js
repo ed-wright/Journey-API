@@ -4,6 +4,19 @@ var mongoose = require('mongoose'),
   User = mongoose.model('Users'),
   Log = mongoose.model('Logs');
 
+exports.show_api_info = function(req, res) {
+  res.json({ message: 'successfully created user' });
+};
+
+exports.users_requires_authentication = function(req, res) {
+  var json = { message: "Requires authentication", documentation_url: "" };
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(json, null, 4));
+};
+
+
+
+
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
     if (err)
@@ -32,10 +45,10 @@ exports.create_a_user = function(req, res) {
 };
 
 exports.list_all_users = function(req, res) {
-  $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-    var new_log = new Log({"api_call": "list_all_users", "ip": data.ip});
-    new_log.save();
-  });
+  // $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+  //   var new_log = new Log({"api_call": "list_all_users", "ip": data.ip});
+  //   new_log.save();
+  // });
   User.find({}, function(err, task) {
     if (err)
       res.send(err);

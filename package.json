@@ -4,7 +4,8 @@
   "description": "Backend API for the Journey App",
   "main": "index.js",
   "scripts": {
-     "test": "mocha testing/test.js",
+    "test": "mocha testing/test.js",
+    "prestart": "start mongod",
     "start": "nodemon server.js"
   },
   "repository": {

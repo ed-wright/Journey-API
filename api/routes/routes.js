@@ -12,8 +12,16 @@ module.exports = function(app) {
   //   .get(todoList.read_a_task)
   //   .put(todoList.update_a_task)
   //   .delete(todoList.delete_a_task);
+  app.route('')
+    .get(journeyBackend.show_api_info);
 
   app.route('/users')
-    .get(journeyBackend.list_all_users)
+    .get(journeyBackend.users_requires_authentication)
     .post(journeyBackend.create_a_user);
+
+  // app.route('/users/create')
+  //   .post(journeyBackend.create_a_user);
+  //
+  // app.route('/session/create')
+  //   .post(journeyBackend.create_a_session);
 };
